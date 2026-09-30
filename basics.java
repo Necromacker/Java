@@ -1,9 +1,9 @@
 import java.util.*;
 
 public class basics {
-  public static void main(String args[]) {
+  public static void main(String arg[]) {
     Scanner sc = new Scanner(System.in);
-    String input = sc.nextLine();
-    System.out.println(input);
+    byte b = 5;
+
   }
 }
