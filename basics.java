@@ -24,8 +24,39 @@ public class basics {
     }
   }
 
+  public static void butterfly(int rows) {
+    int total = rows;
+    for (int i = 1; i <= rows / 2; i++) {
+      for (int j = 1; j <= i; j++) {
+        System.out.print("*");
+      }
+      int spaces = total - 2 * i;
+      for (int j = 1; j <= spaces; j++) {
+        System.out.print(" ");
+      }
+      for (int j = 1; j <= i; j++) {
+        System.out.print("*");
+      }
+      System.out.println();
+    }
+
+    for (int i = rows / 2; i >= 1; i--) {
+      for (int j = 1; j <= i; j++) {
+        System.out.print("*");
+      }
+      int spaces = total - 2 * i;
+      for (int j = 1; j <= spaces; j++) {
+        System.out.print(" ");
+      }
+      for (int j = 1; j <= i; j++) {
+        System.out.print("*");
+      }
+      System.out.println();
+    }
+  }
+
   public static void main(String arg[]) {
-    inverted_half_numbers(5);
+    butterfly(8);
 
   }
 
