@@ -1,5 +1,6 @@
 public class array {
 
+    // Optimized way to reverse array
     public static void reverse(int arr[]) {
         int first = 0;
         int last = arr.length - 1;
@@ -13,6 +14,7 @@ public class array {
         }
     }
 
+    // Linear array search
     public static int Linear_search(int arr[], int key) {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == key) {
@@ -22,6 +24,7 @@ public class array {
         return -1;
     }
 
+    // Binary array search
     public static int Binary_search(int arr[], int key) {
         int start = 0;
         int end = arr.length - 1;
@@ -42,6 +45,7 @@ public class array {
         return -1;
     }
 
+    // Pair in array
     public static void pair_array(int arr[]) {
         for (int j = 0; j < arr.length; j++) {
             int current = arr[j];
@@ -54,6 +58,7 @@ public class array {
         }
     }
 
+    // Calling the function to test
     public static void main(String arg[]) {
         int arr[] = { 2, 4, 6, 8, 10 };
         int key = 2;
