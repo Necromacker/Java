@@ -86,14 +86,11 @@ public class array {
     // Subarray & Maxsum (Prefix Sum , Time complexity = 0[N²])
     public static void subarrayPS(int arr[]) {
         int maxsum = 0;
-
         int[] Prefixsum = new int[arr.length]; // Prefix sum array
         Prefixsum[0] = arr[0];
-
         for (int i = 1; i < arr.length; i++) {
             Prefixsum[i] = Prefixsum[i - 1] + arr[i];
         }
-
         for (int i = 0; i < arr.length; i++) {
             for (int j = i; j < arr.length; j++) {
                 int end = j;
