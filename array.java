@@ -58,11 +58,28 @@ public class array {
         }
     }
 
+    // Subarray
+    public static void subarray(int arr[]) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i; j < arr.length; j++) {
+                int end = j;
+                System.out.print("( ");
+                for (int k = i; k <= end; k++) {
+                    System.out.print(arr[k] + " ");
+                }
+                System.out.println(")");
+            }
+            System.err.println();
+
+        }
+        System.err.println("Total = " + (arr.length * (arr.length + 1)) / 2);
+    }
+
     // Calling the function to test
     public static void main(String arg[]) {
         int arr[] = { 2, 4, 6, 8, 10 };
         int key = 2;
-        pair_array(arr);
+        subarray(arr);
 
     }
 }
