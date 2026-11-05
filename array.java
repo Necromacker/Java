@@ -59,14 +59,10 @@ public class array {
     }
 
     // Subarray & Maxsum (Brute Force)
-    public static void subarray(int arr[]) {
-
+    public static void subarrayBF(int arr[]) {
         int maxsum = 0;
-
         for (int i = 0; i < arr.length; i++) {
-
             for (int j = i; j < arr.length; j++) {
-
                 int sum = 0;
                 int end = j;
                 System.out.print("( ");
@@ -75,17 +71,34 @@ public class array {
                     System.out.print(arr[k] + " ");
                     sum = sum + arr[k];
                 }
-
                 System.out.print(") ");
                 System.out.println("sum = " + sum);
-
                 if (sum > maxsum) {
                     maxsum = sum;
                 }
-
             }
             System.err.println();
+        }
+        System.out.println("maxsum = " + maxsum);
+        System.err.println("Total = " + (arr.length * (arr.length + 1)) / 2);
+    }
 
+    // Subarray & Maxsum (Prefix sum Force)
+    public static void subarrayPS(int arr[]) {
+        int maxsum = 0;
+        int[] Prefixsum = new int[arr.length]; // Prefix sum array
+        Prefixsum[0] = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            Prefixsum[i] = Prefixsum[i - 1] + arr[i];
+        }
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i; j < arr.length; j++) {
+                int end = j;
+                int sum = i == 0 ? Prefixsum[end] : Prefixsum[end] - Prefixsum[i - 1];
+                if (sum > maxsum) {
+                    maxsum = sum;
+                }
+            }
         }
         System.out.println("maxsum = " + maxsum);
         System.err.println("Total = " + (arr.length * (arr.length + 1)) / 2);
@@ -95,7 +108,7 @@ public class array {
     public static void main(String arg[]) {
         int arr[] = { 2, 4, 6, 8, 10 };
         int key = 2;
-        subarray(arr);
+        subarrayPS(arr);
 
     }
 }
