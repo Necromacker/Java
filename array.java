@@ -58,7 +58,7 @@ public class array {
         }
     }
 
-    // Subarray & Maxsum
+    // Subarray & Maxsum (Brute Force)
     public static void subarray(int arr[]) {
 
         int maxsum = 0;
