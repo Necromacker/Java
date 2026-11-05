@@ -58,20 +58,36 @@ public class array {
         }
     }
 
-    // Subarray
+    // Subarray & Maxsum
     public static void subarray(int arr[]) {
+
+        int maxsum = 0;
+
         for (int i = 0; i < arr.length; i++) {
+
             for (int j = i; j < arr.length; j++) {
+
+                int sum = 0;
                 int end = j;
                 System.out.print("( ");
+
                 for (int k = i; k <= end; k++) {
                     System.out.print(arr[k] + " ");
+                    sum = sum + arr[k];
                 }
-                System.out.println(")");
+
+                System.out.print(") ");
+                System.out.println("sum = " + sum);
+
+                if (sum > maxsum) {
+                    maxsum = sum;
+                }
+
             }
             System.err.println();
 
         }
+        System.out.println("maxsum = " + maxsum);
         System.err.println("Total = " + (arr.length * (arr.length + 1)) / 2);
     }
 
