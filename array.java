@@ -116,7 +116,7 @@ public class array {
         System.out.println("Maxsum = " + maxsum);
     }
 
-    // Trapping rainwater problem
+    // Trapping Rainwater , Time Complexity = O(n²) , Space Complexity = O(n)
     public static void Rainwater(int arr[]) {
 
         int Total_water = 0;
@@ -146,6 +146,36 @@ public class array {
         for (int i = 0; i < arr.length; i++) {
             int Water_level = Math.min(Right_max[i], Left_max[i]);
             Total_water = Total_water + Water_level - arr[i];
+        }
+
+        System.out.println(Total_water);
+    }
+
+    // Trapping Rainwater , Time Complexity = O(n) , Space Complexity = O(n)
+    public static void RainwaterOP(int arr[]) {
+        int n = arr.length;
+        if (n == 0)
+            return;
+
+        // 1. Calculate Left Max array in a single O(n) pass
+        int[] Left_max = new int[n];
+        Left_max[0] = arr[0];
+        for (int i = 1; i < n; i++) {
+            Left_max[i] = Math.max(arr[i], Left_max[i - 1]);
+        }
+
+        // 2. Calculate Right Max array in a single O(n) pass
+        int[] Right_max = new int[n];
+        Right_max[n - 1] = arr[n - 1];
+        for (int i = n - 2; i >= 0; i--) {
+            Right_max[i] = Math.max(arr[i], Right_max[i + 1]);
+        }
+
+        // 3. Calculate trapped water
+        int Total_water = 0;
+        for (int i = 0; i < n; i++) {
+            int Water_level = Math.min(Left_max[i], Right_max[i]);
+            Total_water += Water_level - arr[i];
         }
 
         System.out.println(Total_water);
