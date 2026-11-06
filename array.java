@@ -116,11 +116,46 @@ public class array {
         System.out.println("Maxsum = " + maxsum);
     }
 
+    // Trapping rainwater problem
+    public static void Rainwater(int arr[]) {
+
+        int Total_water = 0;
+
+        int[] Right_max = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            int max = Integer.MIN_VALUE;
+            for (int j = i; j < arr.length; j++) {
+                if (max < arr[j]) {
+                    max = arr[j];
+                }
+            }
+            Right_max[i] = max;
+        }
+
+        int[] Left_max = new int[arr.length];
+        for (int i = arr.length - 1; i >= 0; i--) {
+            int max = Integer.MIN_VALUE;
+            for (int j = i; j >= 0; j--) {
+                if (max < arr[j]) {
+                    max = arr[j];
+                }
+            }
+            Left_max[i] = max;
+        }
+
+        for (int i = 0; i < arr.length; i++) {
+            int Water_level = Math.min(Right_max[i], Left_max[i]);
+            Total_water = Total_water + Water_level - arr[i];
+        }
+
+        System.out.println(Total_water);
+    }
+
     // Calling the function to test
     public static void main(String arg[]) {
-        int arr[] = { 2, 4, 6, 8, 10 };
+        int arr[] = { 2, 0, 2 };
         int key = 2;
-        subarrayKA(arr);
+        Rainwater(arr);
 
     }
 }
