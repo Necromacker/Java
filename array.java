@@ -181,11 +181,25 @@ public class array {
         System.out.println(Total_water);
     }
 
+    // Buy & Sell
+    public static void Stocks(int arr[]) {
+        int MaxProfit = 0;
+        int Buy = Integer.MAX_VALUE;
+        for (int i = 0; i < arr.length; i++) {
+            if (Buy < arr[i]) {
+                MaxProfit = Math.max(MaxProfit, (arr[i] - Buy));
+            } else {
+                Buy = arr[i];
+            }
+        }
+        System.out.println(MaxProfit);
+    }
+
     // Calling the function to test
     public static void main(String arg[]) {
-        int arr[] = { 2, 0, 2 };
+        int arr[] = { 7, 1, 5, 3, 6, 4 };
         int key = 2;
-        Rainwater(arr);
+        Stocks(arr);
 
     }
 }
