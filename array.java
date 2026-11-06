@@ -49,10 +49,8 @@ public class array {
     public static void pair_array(int arr[]) {
         for (int j = 0; j < arr.length; j++) {
             int current = arr[j];
-            for (int i = 0; i < arr.length; i++) {
-                if (current < arr[i]) {
-                    System.out.print("(" + current + "," + arr[i] + ")" + " ");
-                }
+            for (int i = j + 1; i < arr.length; i++) {
+                System.out.print("(" + current + "," + arr[i] + ")" + " ");
             }
             System.out.println();
         }
@@ -80,7 +78,7 @@ public class array {
             System.err.println();
         }
         System.out.println("maxsum = " + maxsum);
-        System.err.println("Total = " + (arr.length * (arr.length + 1)) / 2);
+        System.out.println("Total = " + (arr.length * (arr.length + 1)) / 2);
     }
 
     // Subarray & Maxsum (Prefix Sum , Time complexity = 0[N²])
@@ -104,11 +102,25 @@ public class array {
         System.err.println("Total = " + (arr.length * (arr.length + 1)) / 2);
     }
 
+    // Subarray & Maxsum (Kadane Algo , Time complexity = 0[N])
+    public static void subarrayKA(int arr[]) {
+        int currentsum = 0;
+        int maxsum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            currentsum = currentsum + arr[i];
+            if (currentsum < 0) {
+                currentsum = 0;
+            }
+            maxsum = Math.max(currentsum, maxsum);
+        }
+        System.out.println("Maxsum = " + maxsum);
+    }
+
     // Calling the function to test
     public static void main(String arg[]) {
         int arr[] = { 2, 4, 6, 8, 10 };
         int key = 2;
-        subarrayPS(arr);
+        subarrayKA(arr);
 
     }
 }
