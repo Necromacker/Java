@@ -91,7 +91,7 @@ public class TWDArray {
 
     public static void main(String arg[]) {
         int x = 1;
-        int matrix[][] = new int[2][3];
+        int matrix[][] = new int[3][3];
         Scanner sc = new Scanner(System.in);
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
@@ -99,7 +99,7 @@ public class TWDArray {
                 x++;
             }
         }
-        // Spiral(matrix);
+        Spiral(matrix);
         System.out.println();
         OPSpiral(matrix);
 
