@@ -89,19 +89,32 @@ public class TWDArray {
         }
     }
 
+    // Staircase Search (Time Complexity = O(n+m))
+    public static void Staircase(int matrix[][], int key) {
+        int row = matrix.length - 1;
+        int col = 0;
+        while (col < matrix[0].length && row >= 0) {
+            if (key < matrix[row][col]) {
+                row--;
+            } else if (key > matrix[row][col]) {
+                col++;
+            } else if (key == matrix[row][col]) {
+                System.out.println("Found at (" + row + "," + col + ")");
+                break;
+            }
+        }
+    }
+
     public static void main(String arg[]) {
         int x = 1;
         int matrix[][] = new int[3][3];
-        Scanner sc = new Scanner(System.in);
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
                 matrix[i][j] = x;
                 x++;
             }
         }
-        Spiral(matrix);
-        System.out.println();
-        OPSpiral(matrix);
+        Staircase(matrix, 500);
 
     }
 }
