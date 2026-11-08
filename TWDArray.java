@@ -11,13 +11,13 @@ public class TWDArray {
             for (int i = start; i < end; i++) {
                 if (i == start) {
                     for (int j = start; j < end; j++) {
-                        // System.out.print(matrix[i][j] + " ");
+                        System.out.print(matrix[i][j] + " ");
                     }
                 }
-                System.out.print(i + " = i ");
+
                 if (i == (end - 1)) {
                     for (int k = (end - 1); k >= 0; k--) {
-                        System.out.print(k + " = k ");
+                        System.out.print(matrix[i][k] + " ");
                     }
                 }
             }
@@ -30,7 +30,7 @@ public class TWDArray {
 
     public static void main(String arg[]) {
         int x = 1;
-        int matrix[][] = new int[3][4];
+        int matrix[][] = new int[4][4];
         Scanner sc = new Scanner(System.in);
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
