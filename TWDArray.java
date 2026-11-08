@@ -4,11 +4,27 @@ public class TWDArray {
 
     // Spiral 2D Array
     public static void Spiral(int matrix[][]) {
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[0].length; j++) {
-                System.out.print(matrix[i][j] + " ");
+        int start = 0;
+        int end = matrix[0].length;
+        while (start < end) {
+
+            for (int i = start; i < end; i++) {
+                if (i == start) {
+                    for (int j = start; j < end; j++) {
+                        // System.out.print(matrix[i][j] + " ");
+                    }
+                }
+                System.out.print(i + " = i ");
+                if (i == (end - 1)) {
+                    for (int k = (end - 1); k >= 0; k--) {
+                        System.out.print(k + " = k ");
+                    }
+                }
             }
-            System.out.println();
+            // System.out.print(start + " ");
+            // System.out.print(end + " ");
+            start++;
+            end--;
         }
     }
 
