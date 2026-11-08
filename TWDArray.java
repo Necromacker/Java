@@ -49,9 +49,49 @@ public class TWDArray {
         }
     }
 
+    // Spiral 2D Array Optimized
+    public static void OPSpiral(int matrix[][]) {
+        int rowStart = 0;
+        int rowEnd = matrix.length - 1;
+        int colStart = 0;
+        int colEnd = matrix[0].length - 1;
+
+        while (rowStart <= rowEnd && colStart <= colEnd) {
+            // 1. Traverse Right along the top row
+            for (int j = colStart; j <= colEnd; j++) {
+                System.out.print(matrix[rowStart][j] + " ");
+            }
+            rowStart++;
+
+            // 2. Traverse Down along the rightmost column
+            for (int i = rowStart; i <= rowEnd; i++) {
+                System.out.print(matrix[i][colEnd] + " ");
+            }
+            colEnd--;
+
+            // 3. Traverse Left along the bottom row with 'if' inside the loop
+            for (int j = colEnd; j >= colStart; j--) {
+                if (rowStart == rowEnd) {
+                    break;
+                }
+                System.out.print(matrix[rowEnd][j] + " ");
+            }
+            rowEnd--;
+
+            // 4. Traverse Up along the leftmost column with 'if' inside the loop
+            for (int i = rowEnd; i >= rowStart; i--) {
+                if (colStart == colEnd) {
+                    break;
+                }
+                System.out.print(matrix[i][colStart] + " ");
+            }
+            colStart++;
+        }
+    }
+
     public static void main(String arg[]) {
         int x = 1;
-        int matrix[][] = new int[4][4];
+        int matrix[][] = new int[2][3];
         Scanner sc = new Scanner(System.in);
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
@@ -59,7 +99,9 @@ public class TWDArray {
                 x++;
             }
         }
-        Spiral(matrix);
+        // Spiral(matrix);
+        System.out.println();
+        OPSpiral(matrix);
 
     }
 }
