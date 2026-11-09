@@ -12,7 +12,7 @@ public class strings {
             start++;
             end--;
         }
-    }
+    }//
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
