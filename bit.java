@@ -11,8 +11,19 @@ public class bit {
         }
     }
 
+    //
+    public static void GetBit(int num, int i) {
+        int bit = num >> i;
+        if ((bit & 1) == 1) {
+            System.out.println("1");
+        } else {
+            System.out.println("0");
+        }
+    }
+
     public static void main(String[] args) {
-        int num = 1;
-        bitodd(num);
+        int num = 7;
+        int i = 1;
+        GetBit(num, i);
     }
 }
