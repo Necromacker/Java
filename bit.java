@@ -27,9 +27,15 @@ public class bit {
         System.out.println(bit | (newbit << i));
     }
 
+    // Clear Bit Range
+    public static void ClearBitRange(int num, int start, int end) {
+        int left = (~0) << (end + 1);
+        int right = ~((~0) << start);
+        int rangemask = left | right;
+        System.out.println(num & rangemask);
+    }
+
     public static void main(String[] args) {
-        int num = 10;
-        int i = 2;
-        UpdateBit(num, i, 1);
+        ClearBitRange(10, 2, 4);
     }
 }
