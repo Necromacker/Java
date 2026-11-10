@@ -35,7 +35,19 @@ public class bit {
         System.out.println(num & rangemask);
     }
 
+    // Count 1 Bits
+    public static void CountSetBit(int num) {
+        int count = 0;
+        while (num > 0) {
+            if ((num & 1) == 1) {
+                count++;
+            }
+            num = num >> 1;
+        }
+        System.out.println(count);
+    }
+
     public static void main(String[] args) {
-        ClearBitRange(10, 2, 4);
+        CountSetBit(15);
     }
 }
