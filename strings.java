@@ -49,9 +49,27 @@ public class strings {
         System.out.println(sb);
     }
 
+    // String Compression
+    public static void Compression(String str) {
+        int count = 1;
+        StringBuilder compressed = new StringBuilder("");
+        for (int i = 0; i < str.length() - 1; i++) {
+            if (str.charAt(i) == str.charAt(i + 1)) {
+                count++;
+            } else if (count == 1) {
+                compressed.append(str.charAt(i));
+            } else {
+                compressed.append(str.charAt(i));
+                compressed.append(count);
+                count = 1;
+            }
+        }
+        System.out.println(compressed);
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();
-        Uppercase(str);
+        Compression(str);
     }
 }
