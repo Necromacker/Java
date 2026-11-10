@@ -2,6 +2,7 @@ import java.util.*;
 
 public class bit {
 
+    // Odd & Even Bitwise
     public static void bitodd(int num) {
         if ((num & 1) == 1) {
             System.out.println("Odd");
