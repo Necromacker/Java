@@ -11,7 +11,7 @@ public class bit {
         }
     }
 
-    //
+    // Get nth Bit
     public static void GetBit(int num, int i) {
         int bit = num >> i;
         if ((bit & 1) == 1) {
@@ -21,9 +21,15 @@ public class bit {
         }
     }
 
+    // Update Bit
+    public static void UpdateBit(int num, int i, int newbit) {
+        int bit = num & ~(1 << i);
+        System.out.println(bit | (newbit << i));
+    }
+
     public static void main(String[] args) {
-        int num = 7;
-        int i = 1;
-        GetBit(num, i);
+        int num = 10;
+        int i = 2;
+        UpdateBit(num, i, 1);
     }
 }
