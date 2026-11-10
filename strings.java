@@ -51,6 +51,7 @@ public class strings {
 
     // String Compression
     public static void Compression(String str) {
+        str += " ";
         int count = 1;
         StringBuilder compressed = new StringBuilder("");
         for (int i = 0; i < str.length() - 1; i++) {
