@@ -1,17 +1,17 @@
 public class recursion {
 
-    public static void feb(int prev, int next, int i, int count) {
-
-        if (count == i - 1) {
-            System.out.println(prev);
-            return;
+    // correct way
+    public static int febo(int i) {
+        if (i == 1) {
+            return 1;
         }
-        System.out.println(prev);
-        int temp = next;
-        next = prev + next;
-        prev = temp;
-        feb(prev, next, i, ++count);
-        return;
+        if (i == 0) {
+            return 0;
+        }
+        int feb1 = febo(i - 1);
+        int feb2 = febo(i - 2);
+        int feb3 = feb1 + feb2;
+        return feb3;
     }
 
     public static int sumofn(int i) {
@@ -49,6 +49,6 @@ public class recursion {
 
     public static void main(String[] args) {
         int i = 10;
-        feb(0, 1, i, 0);
+        System.out.println(febo(i));
     }
 }
