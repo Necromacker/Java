@@ -1,5 +1,14 @@
 public class recursion {
 
+    public static void increasing(int i) {
+        if (i == 0) {
+            System.out.println(i);
+            return;
+        }
+        increasing(i - 1);
+        System.out.println(i);
+    }
+
     public static void decreasing(int i) {
         if (i >= 0) {
             System.out.println(i);
@@ -10,6 +19,6 @@ public class recursion {
 
     public static void main(String[] args) {
         int i = 10;
-        decreasing(i);
+        increasing(i);
     }
 }
