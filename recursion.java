@@ -1,6 +1,15 @@
 public class recursion {
 
-    // correct way
+    public static boolean sorted(int arr[], int i) {
+        if (i == arr.length - 1) {
+            return true;
+        }
+        if (arr[i] > arr[i + 1]) {
+            return false;
+        }
+        return (sorted(arr, i + 1));
+
+    // correct way (time complexity - 2**n)
     public static int febo(int i) {
         if (i == 1) {
             return 1;
@@ -48,7 +57,8 @@ public class recursion {
     }
 
     public static void main(String[] args) {
-        int i = 10;
-        System.out.println(febo(i));
+        int i = 0;
+        int arr[] = { 1, 2, 3, 4, 5 };
+        System.out.println(sorted(arr, 0));
     }
 }
