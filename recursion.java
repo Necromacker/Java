@@ -1,5 +1,13 @@
 public class recursion {
 
+    public static int factorial(int i) {
+        if (i == 1) {
+            return (1);
+        }
+        return (i * factorial(i - 1));
+
+    }
+
     public static void increasing(int i) {
         if (i == 0) {
             System.out.println(i);
@@ -18,7 +26,7 @@ public class recursion {
     }
 
     public static void main(String[] args) {
-        int i = 10;
-        increasing(i);
+        int i = 5;
+        System.out.println(factorial(i));
     }
 }
