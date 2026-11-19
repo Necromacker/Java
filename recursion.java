@@ -1,5 +1,13 @@
 public class recursion {
 
+    public static int sumofn(int i) {
+        if (i == 1) {
+            return (1);
+        }
+        return (i + sumofn(i - 1));
+
+    }
+
     public static int factorial(int i) {
         if (i == 1) {
             return (1);
@@ -27,6 +35,6 @@ public class recursion {
 
     public static void main(String[] args) {
         int i = 5;
-        System.out.println(factorial(i));
+        System.out.println(sumofn(i));
     }
 }
